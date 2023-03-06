@@ -57,7 +57,12 @@ export const EpisodesList = () => {
             .map((espisode) => <EpisodeCard key={espisode.id} {...espisode} />)
         )}
       </div>
-      <Pagination pageNumber={episodeNumber} setPageNumber={setEpisodeNumber} />
+      <div onClick={()=> setEpisodeNumber(episodeNumber + 1)}>
+        <Pagination
+          pageNumber={episodeNumber}
+          updatePageNumber={setEpisodeNumber}
+        />
+      </div>
     </>
   );
 };

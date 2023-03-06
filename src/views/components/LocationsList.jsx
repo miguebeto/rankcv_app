@@ -12,6 +12,10 @@ export const LocationsList = () => {
   });
   const [search, setSearch] = useState("");
 
+  let name = data?.location.name;
+  let dimension = data?.location.dimension;
+  let type = data?.location.type;
+
   const handleSearch = (e) => {
     e.preventDefault();
     setSearch(e.target.value);
@@ -19,6 +23,19 @@ export const LocationsList = () => {
   if (error) return <span style="color: red">{error}</span>;
   return (
     <>
+      <div className="row mb-3">
+        <h1 className="text-center mb-3">
+          Location :
+          <span className="text-primary">
+            {" "}
+            {name === "" ? "Unknown" : name}
+          </span>
+        </h1>
+        <h5 className="text-center">
+          Dimension: {dimension === "" ? "Unknown" : dimension}
+        </h5>
+        <h6 className="text-center">Type: {type === "" ? "Unknown" : type}</h6>
+      </div>
       <div>
         <input
           className="form-control"
@@ -46,7 +63,12 @@ export const LocationsList = () => {
             .map((location) => <LocationCard key={location.id} {...location} />)
         )}
       </div>
-      <Pagination pageNumber={locationNumber} setPageNumber={setLocationNumber}/>
+      <div onClick={() => setLocationNumber(locationNumber + 1)}>
+        <Pagination
+          pageNumber={locationNumber}
+          updatePageNumber={setLocationNumber}
+        />
+      </div>
     </>
   );
 };
