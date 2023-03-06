@@ -8,7 +8,7 @@ import { ViewsRoutes } from '../views/routes/ViewsRoutes';
 export const AppRouter = () => {
 
     const { status, checkAuthToken } = useAuthStore();
-    const authStatus = 'not-authenticated'; // 'authenticated'; // 'not-authenticated';
+    // const authStatus = 'not-authenticated'; // 'authenticated'; // 'not-authenticated';
 
 
     useEffect(() => {

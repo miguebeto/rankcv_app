@@ -3,6 +3,12 @@ import { gql } from "@apollo/client";
 export const ALL_CHARACTERS = gql`
   query findEpisodeById($pageNumber: Int) {
     characters(page: $pageNumber) {
+      info{
+        count
+        pages
+        next
+        prev
+      }
       results {
         id
         image
@@ -14,6 +20,7 @@ export const ALL_CHARACTERS = gql`
     }
   }
 `;
+
 
 export const FIND_CHARACTERS = gql`
   query {

@@ -11,6 +11,7 @@ export const CharactersList = () => {
   const { data, error, loading } = useQuery(ALL_CHARACTERS, {
     variables: { pageNumber },
   });
+  let info = data?.characters.info;
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -48,7 +49,11 @@ export const CharactersList = () => {
             ))
         )}
       </div>
-      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+      <Pagination
+        info={info}
+        pageNumber={pageNumber}
+        updatePageNumber={setPageNumber}
+      />
     </>
   );
 };

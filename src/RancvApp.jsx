@@ -5,7 +5,7 @@ import {
   InMemoryCache,
   ApolloProvider,
 } from "@apollo/client";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 
@@ -20,11 +20,11 @@ const client = new ApolloClient({
 export const RancvApp = () => {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter>
         <ApolloProvider client={client}>
           <AppRouter />
         </ApolloProvider>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   );
 };
