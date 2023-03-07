@@ -35,17 +35,6 @@ export const ALL_EPISODES = gql`
   }
 `;
 
-export const FIND_EPISODES = gql`
-  query findEpisodeById($id: ID!) {
-    episode(id: $id) {
-      id
-      name
-      air_date
-      episode
-      created
-    }
-  }
-`;
 
 export const ALL_LOCATIONS = gql`
   query findCharactersByLocation($locationNumber: ID!) {

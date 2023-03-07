@@ -1,13 +1,12 @@
-import { CharactersList } from "../components/CharactersList"
+import { CharactersList } from "../components/CharactersList";
 
 export const CharactersPage = () => {
-  return (
-    <>
-      <h1>Characters Rick and Morty</h1>
-      <hr />
+    return (
+        <>
+            <h1>Characters Rick and Morty</h1>
+            <hr />
 
-      {/* <CharactersList publisher="Marvel Comics" /> */}
-      <CharactersList />
-    </>
-  )
-}
+            <CharactersList />
+        </>
+    );
+};
