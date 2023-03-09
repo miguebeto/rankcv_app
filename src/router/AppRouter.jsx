@@ -1,18 +1,11 @@
-import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import { LoginPage } from "../auth/pages/LoginPage";
-import { useAuthStore } from "../hooks/useAuthStore";
+import { useLoading } from "../hooks/useLoading";
 import { ViewsRoutes } from "../views/routes/ViewsRoutes";
 
 export const AppRouter = () => {
-    const { status, checkAuthToken } = useAuthStore();
-    // const authStatus = 'not-authenticated'; // 'authenticated'; // 'not-authenticated';
-
-    useEffect(() => {
-        checkAuthToken();
-    }, []);
-
+    const { status } = useLoading();
     if (status === "checking") {
         return <h3>Cargando...</h3>;
     }

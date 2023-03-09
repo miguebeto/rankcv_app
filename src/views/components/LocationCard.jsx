@@ -1,4 +1,4 @@
-export const LocationCard = ({ id, image, name, gender, species, status }) => {
+export const LocationCard = ({ image, name, gender, species, status }) => {
     return (
         <>
             <div className="grid__itemBig">

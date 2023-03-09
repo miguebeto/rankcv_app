@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const ALL_CHARACTERS = gql`
-  query findEpisodeById($pageNumber: Int) {
-    characters(page: $pageNumber) {
+  query findEpisodeById($number: Int) {
+    characters(page: $number) {
       info {
         pages
       }
@@ -19,8 +19,8 @@ export const ALL_CHARACTERS = gql`
 `;
 
 export const ALL_EPISODES = gql`
-  query findCharactersByEpisode($episodeNumber: ID!) {
-    episode(id: $episodeNumber) {
+  query findCharactersByEpisode($number: ID!) {
+    episode(id: $number) {
       name
       air_date
       characters {
@@ -37,8 +37,8 @@ export const ALL_EPISODES = gql`
 
 
 export const ALL_LOCATIONS = gql`
-  query findCharactersByLocation($locationNumber: ID!) {
-    location(id: $locationNumber) {
+  query findCharactersByLocation($number: ID!) {
+    location(id: $number) {
       name
       dimension
       type
